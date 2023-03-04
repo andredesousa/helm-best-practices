@@ -1,32 +1,35 @@
 # Helm Best Practices
 
+Helm is a package manager for Kubernetes applications, providing mechanisms to template and group Kubernetes manifests as versioned packages.
+These tips are based on books, articles and professional experience.
+
 ## Table of Contents
 
-1. [Follow Helm conventions]()
-2. [Use Helm create command]()
-3. [Explore public charts]()
-4. [Do not put everything in one chart]()
-5. [Use subcharts to reuse code]()
-6. [Have a Git repository]()
-7. [Have a chart repository]()
-8. [Test templates and charts]()
-9. [Generate documentation for charts]()
-10. [Sign and verify charts]()
-11. [Scan charts regularly]()
-12. [Keep the deployments idempotent]()
-13. [Rollbacks with version control]()
-14. [Automatically roll deployments]()
-15. [Use template functions]()
-16. [Use lint, template, and debug commands]()
-17. [Use small-sized images]()
-18. [Avoid privileged containers]()
-19. [Limit container resources]()
-20. [Include health/liveness checks]()
-21. [Include logging and monitoring tools]()
-22. [Use labels to find resources]()
-23. [Separate values by environments]()
-24. [Store secrets encrypted]()
-25. [Take advantage of Helm hooks]()
+1. [Follow Helm conventions](#follow-helm-conventions)
+2. [Use Helm create command](#use-helm-create-command)
+3. [Explore public charts](#explore-public-charts)
+4. [Do not put everything in one chart](#do-not-put-everything-in-one-chart)
+5. [Use subcharts to reuse code](#use-subcharts-to-reuse-code)
+6. [Have a Git repository](#have-a-git-repository)
+7. [Have a chart repository](#have-a-chart-repository)
+8. [Test templates and charts](#test-templates-and-charts)
+9. [Generate documentation for charts](#generate-documentation-for-charts)
+10. [Sign and verify charts](#sign-and-verify-charts)
+11. [Scan charts regularly](#scan-charts-regularly)
+12. [Keep the deployments idempotent](#keep-the-deployments-idempotent)
+13. [Rollbacks with version control](#rollbacks-with-version-control)
+14. [Automatically roll deployments](#automatically-roll-deployments)
+15. [Use template functions](#use-template-functions)
+16. [Use lint, template, and debug commands](#use-lint-template-and-debug-commands)
+17. [Use small-sized images](#use-small-sized-images)
+18. [Avoid privileged containers](#avoid-privileged-containers)
+19. [Limit container resources](#limit-container-resources)
+20. [Include health/liveness checks](#include-healthliveness-checks)
+21. [Include logging and monitoring tools](#include-logging-and-monitoring-tools)
+22. [Use labels to find resources](#use-labels-to-find-resources)
+23. [Separate values by environments](#separate-values-by-environments)
+24. [Store secrets encrypted](#store-secrets-encrypted)
+25. [Take advantage of Helm hooks](#take-advantage-of-helm-hooks)
 
 ## Follow Helm conventions
 
@@ -234,7 +237,7 @@ Labels enable you to find your resources created by Helm releases quickly.
 ## Separate values by environments
 
 Default values are specified for most settings in a *values.yaml* file and these values are passed into the chart.
-You can maintain the values YAML files at the root folder namely *values-<env>.yaml*.
+You can maintain the values YAML files at the root folder namely *values-[env].yaml*.
 For example, *values-dev.yaml* and *values-prod.yaml* for *dev* and *prod* environments, respectively.
 Each value file is used depending on the environment for the deployment.
 A [values file](https://helm.sh/docs/chart_template_guide/values_files/) if passed into `helm install` or `helm upgrade` with the `-f` flag.
@@ -254,16 +257,16 @@ Helm hooks allow you an opportunity to perform operations at strategic points in
 
 ## Bibliography
 
-- 13 Best Practices for using Helm
-- Best Practices for Creating Production-Ready Helm charts
-- Best practices for deploying to Kubernetes using Helm
-- Developer's Guide to Writing a Good Helm Chart
-- Chart Development Tips and Tricks
-- Helm 101 for Developers
-- Helm Best Practices and Recommendations
-- Helm Chart — Development Guide
-- Helm Chart Hooks Tutorial
-- Helm Charts Best Practices
-- Helm Charts Best Practices
-- Helm security and best practices
-- Scan Helm charts for Kubernetes misconfigurations with Checkov
+- [13 Best Practices for using Helm](https://codersociety.com/blog/articles/helm-best-practices)
+- [Best Practices for Creating Production-Ready Helm charts](https://docs.bitnami.com/tutorials/production-ready-charts/)
+- [Best practices for deploying to Kubernetes using Helm](https://itnext.io/best-practices-for-deploying-to-kubernetes-using-helm-73be1f3040d2)
+- [Developer's Guide to Writing a Good Helm Chart](https://boxunix.com/2022/02/05/developers-guide-to-writing-a-good-helm-chart/)
+- [Chart Development Tips and Tricks](https://helm.sh/docs/howto/charts_tips_and_tricks/)
+- [Helm 101 for Developers](https://levelup.gitconnected.com/helm-101-for-developers-1c28e734937e)
+- [Helm Best Practices and Recommendations](https://kodekloud.com/blog/helm-best-practices/)
+- [Helm Chart - Development Guide](https://medium.com/swlh/helm-chart-development-guide-bbc525d3b448)
+- [Helm Chart Hooks Tutorial](https://rafay.co/the-kubernetes-current/helm-chart-hooks-tutorial/)
+- [Helm Charts Best Practices](https://www.linkedin.com/pulse/helm-charts-best-practices-my-experience-suresh-palemoni/)
+- [Helm security and best practices](https://sysdig.com/blog/how-to-secure-helm/)
+- [Scan Helm charts for Kubernetes misconfigurations with Checkov](https://bridgecrew.io/blog/scan-helm-charts-for-kubernetes-misconfigurations-with-checkov/)
+- [Steering Straight with Helm Charts Best Practices](https://jfrog.com/blog/helm-charts-best-practices/)
